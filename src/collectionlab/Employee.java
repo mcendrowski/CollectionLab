@@ -2,7 +2,7 @@ package collectionlab;
 
 import java.util.*;
 
-public class Employee {
+public class Employee implements NameStrategy {
     private String lastName;
     private String firstName;
     private String ssn;
@@ -63,6 +63,11 @@ public class Employee {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String getName() {
+       return this.getFirstName()+" "+this.getLastName();
     }
 
 

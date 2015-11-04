@@ -9,7 +9,7 @@ package collectionlab;
  *
  * @author instlogin
  */
-public class Dog {
+public class Dog implements NameStrategy {
     private String name;
     private int rabiesId;
 
@@ -22,6 +22,7 @@ public class Dog {
     }
     
 
+    @Override
     public String getName() {
         return name;
     }

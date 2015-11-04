@@ -30,9 +30,19 @@ public class SetExample {
             System.out.println(employee.toString());
         }
         
+        
+        
         Set<Employee>set = new HashSet<>(employeeList);
-        System.out.println("--------------------------- set --------------------------------------");
-        for(Employee emp: set){
+        
+//        employeeList=null;
+        
+        employeeList = new ArrayList<>(set); 
+        set=null;
+        
+        
+        
+        System.out.println("--------------------------- list --------------------------------------");
+        for(Employee emp: employeeList){
             System.out.println(emp.toString());
         }
        

@@ -22,9 +22,37 @@ public class MixedListExample {
         mixedList.add(new Dog("Hooch", 1234));
         mixedList.add(new Dog("Beethoven", 5678));
 
-        for (Object object : mixedList) {
-            String obj = object.toString();
-            System.out.println(obj);
+        for (int i = 0; i < mixedList.size(); i++) {
+            Object object = mixedList.get(i);
+
+            if (object instanceof Employee) {
+                System.out.println(((Employee) object).getFirstName());
+
+            }
+            if (object instanceof Dog) {
+                System.out.println(((Dog) object).getName());
+
+            }
+
         }
+
+//        for (int i = 0; i < mixedList.size(); i++) {
+//            Object object = mixedList.get(i);
+//
+//            Class objectClass = mixedList.get(i).getClass();
+////            objectClass.cast(mixedList.get(i));
+//            System.out.println((objectClass.getName()) object);
+//            
+////            System.out.println(objectClass.asSubclass(NameStrategy).getName());
+////            System.out.println(object.getClass().getName());
+//        
+//        }
+
+        for (int i = 0; i < mixedList.size(); i++) {
+            NameStrategy name = (NameStrategy) mixedList.get(i);
+            System.out.println(name.getName());
+
+        }
+
     }
 }
